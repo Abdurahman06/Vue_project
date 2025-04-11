@@ -12,7 +12,7 @@
 :input-value="order.done"
 color="primary"
 ></v-checkbox>
-</v-list-item-action>
+</v-list-item-action> 
 </template>
 <v-list-item-title>{{ order.name }}</v-list-item-title>
 <v-list-item-subtitle>{{ order.phone }}</v-list-item-subtitle>
