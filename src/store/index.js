@@ -1,8 +1,15 @@
 import { createStore } from 'vuex'
+import ads from './ads'
+
+
 
 const store = createStore({
-modules:{
-}
+    modules:{
+        ads
+            }
 })
 
+
+
 export default store
+
