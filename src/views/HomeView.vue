@@ -3,7 +3,7 @@
     <v-row justify="center">
       <v-col cols="12" xs="12">
         <v-carousel>
-          <v-carousel-item v-for="ad in promoAds" :key="ad.id" :src="ad.src"cover>
+          <v-carousel-item v-for="ad in promoAds" :key="ad.id" :src="ad.src" cover>
             <div class="ad-link">
               <v-btn class="error" :to="'/ad/' + ad.id">
                 {{ ad.title }}
