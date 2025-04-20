@@ -58,17 +58,22 @@ export default {
 	}
 },
 
-  methods: {
-    onSubmit(){
-	if (this.$refs.form.validate()){
-		const user = {
-			email: this.email,
-			password: this.password
-		}
-		this.$store.dispatch('registerUser', user)
-	}
-}
-
-  }
+methods: {
+        onSubmit() {
+            if (this.$refs.form.validate()) {
+                const user = {
+                    email: this.email,
+                    password: this.password
+                }
+                this.$store.dispatch('registerUser', user)
+                    .then(() => {
+                        this.$router.push("/")
+                    })
+                    .catch((err) => {
+                        console.log(err)
+                    })
+            }
+        }
+    }
 } 
 </script>
