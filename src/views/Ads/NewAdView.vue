@@ -53,16 +53,18 @@ export default {
         }
     },
     methods: {
-        createAd() {
-            if (this.$refs.form.validate()) {
-                const ad = {
-                    title: this.title,
-                    desc: this.description,
-                    promo: this.promo
-                }
-                console.log(ad)
-            }
-        }
+        createAd(){
+	if (this.$refs.form.validate()){
+		const ad = {
+			title: this.title,
+			desc: this.description,
+			promo: this.promo,
+			src: "https://cdn.vuetifyjs.com/images/cards/cooking.png"
+		}
+	this.$store.dispatch("createAd", ad)
+}
+}
+
     }
 }
 </script>
