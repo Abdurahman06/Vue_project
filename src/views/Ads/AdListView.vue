@@ -36,10 +36,11 @@ Open
   <script>
   export default {
     computed: {
-        myAds() {
-            return this.$store.getters.myAds
-        }
-    }
+ads(){
+return this.$store.getters.myAds
+}
+}
+
 
 };
   </script>  
