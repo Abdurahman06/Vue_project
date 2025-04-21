@@ -17,12 +17,15 @@
 
       <v-list dense>
 
-        <v-list-item v-for="link in links" :key="link.title" :to="link.url">
-          <template v-slot:prepend>
-            <v-icon :icon="link.icon"></v-icon>
-          </template>
-          <v-list-item-title>{{ link.title }}</v-list-item-title>
-        </v-list-item>
+        <v-list-item
+@click="onLogout"
+v-if="isUserLoggedIn"
+>
+<template v-slot:prepend>
+<v-icon icon="mdi-exit-to-app"></v-icon>
+</template>
+<v-list-item-title>Logout</v-list-item-title>
+</v-list-item>
       </v-list>
 
     </v-navigation-drawer>
@@ -37,11 +40,27 @@
 
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn v-for="link in links" :key="link.title" :to="link.url">
-          <v-icon start :icon="link.icon"></v-icon>
-          {{ link.title }}
-        </v-btn>
-      </v-toolbar-items>
+<v-btn
+v-for="link in links"
+:key="link.title"
+:to="link.url"
+>
+<v-icon
+start
+:icon="link.icon"
+></v-icon>
+{{ link.title }}
+</v-btn>
+<v-btn
+@click="onLogout"
+v-if="isUserLoggedIn">
+<v-icon
+start
+icon="mdi-exit-to-app"
+></v-icon>
+Logout
+</v-btn>
+</v-toolbar-items>
     </v-app-bar>
     <v-main>
       <router-view></router-view>
@@ -97,10 +116,15 @@ return [
 
 },
 methods: {
-    closeError () {
-      this.$store.dispatch('clearError')
-    }
- }
+closeError () {
+this.$store.dispatch('clearError')
+},
+onLogout () {
+this.$store.dispatch('logoutUser')
+this.$router.push("/")
+}
+},
+
 
 }
 </script>
