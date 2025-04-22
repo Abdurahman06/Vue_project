@@ -5,11 +5,22 @@
         <v-card class="mt-5">
           <v-img height="400px" :src="ad.src" cover></v-img>
           <v-card-text>
-            <h1 class="text--primary mb-3">{{ ad.title }}</h1>
-            <p>
-              {{ ad.desc }}
-            </p>
-          </v-card-text>
+<v-text-field
+name="title"
+label="Title"
+type="text"
+v-model="editedTitle"
+>
+</v-text-field>
+<v-textarea
+name="desc"
+label="Description"
+type="text"
+v-model="editedDesc"
+class="mb-3"
+></v-textarea>
+</v-card-text>
+
           <v-card-actions>
             <v-spacer></v-spacer>
             <modal-dialog></modal-dialog>

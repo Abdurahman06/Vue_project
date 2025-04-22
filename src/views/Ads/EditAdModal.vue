@@ -34,11 +34,14 @@
 </template>
 
 <script>
-export default {
-    data() {
-        return {
-            modal: false
-        }
-    }
-}
+	export default {
+		data() {
+			return {
+				modal: false,
+				editedTitle: "",
+				editedDesc: ""
+			}
+		}
+	}	
 </script>
+
