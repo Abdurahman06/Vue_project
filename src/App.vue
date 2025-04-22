@@ -5,10 +5,10 @@
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="title">
-            КИПУ
+            Techstore
           </v-list-item-title>
           <v-list-item-subtitle>
-            Учебный проект
+            Интернет-магазин электроники
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
