@@ -47,6 +47,12 @@ export default {
             
             
     },
-	getters: {}
+	getters: {
+        orders (state, getters) {
+        if (getters.user == null) return []
+        return state.orders.filter(order => order.userId == getters.user.id)
+        }
+        }
+        
 }
 
