@@ -55,21 +55,15 @@ export default {
       }
   },
   methods: {
-        onSubmit(){
-	if (this.$refs.form.validate()){
-		const user = {
-			email: this.email,
-			password: this.password
-		}
-		this.$store.dispatch('loginUser', user)
-		.then(() => {
-			this.$router.push("/")
-		})
-		.catch((err) => {
-			console.log(err)
-		})
-	}
-}
+  async onSubmit() {
+    try {
+      await this.$store.dispatch('user/loginUser', this.form)
+      this.$router.push('/')
+    } catch (error) {
+      console.error('Login error:', error)
+    }
+  },
+
 
 },
 computed: {

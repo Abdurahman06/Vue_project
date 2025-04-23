@@ -1,10 +1,38 @@
-// Styles
+// Импорт стилей
 import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'
 
-// Vuetify
+// Импорт Vuetify
 import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
 
-export default createVuetify(
-  // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
-)
+// Тема (опционально)
+const myCustomTheme = {
+  dark: false,
+  colors: {
+    primary: '#1867C0',
+    secondary: '#5CBBF6',
+  }
+}
+
+export default createVuetify({
+  components,
+  directives,
+  theme: {
+    defaultTheme: 'myCustomTheme',
+    themes: {
+      myCustomTheme,
+    }
+  },
+  defaults: {
+    VBtn: {
+      color: 'primary',
+      variant: 'flat',
+    },
+    VTextField: {
+      color: 'primary',
+      variant: 'outlined',
+    }
+  }
+})
