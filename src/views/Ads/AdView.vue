@@ -22,9 +22,9 @@ class="mb-3"
 </v-card-text>
 
 <v-card-actions>
-	<v-spacer></v-spacer>
-	<modal-dialog :ad="ad" v-if="isOwner"></modal-dialog>
-	<v-btn class="success">Buy</v-btn>
+<v-spacer></v-spacer>
+<modal-dialog :ad="ad" v-if="isOwner"></modal-dialog>
+<buy-ad-modal :ad="ad"></buy-ad-modal>
 </v-card-actions>
 
         </v-card>
