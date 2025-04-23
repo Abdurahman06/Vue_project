@@ -4,7 +4,7 @@ import vuetify from './plugins/vuetify'
 import { loadFonts } from './plugins/webfontloader'
 import router from './router'
 import store from './store'
-import BuyAdModal from './views/Shared/BuyAdModel'
+import BuyAdModal from './views/Shared/BuyAdModal'
 
 
 loadFonts()
