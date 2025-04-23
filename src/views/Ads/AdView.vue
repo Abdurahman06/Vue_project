@@ -21,11 +21,12 @@ class="mb-3"
 ></v-textarea>
 </v-card-text>
 
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <modal-dialog :ad="ad"></modal-dialog>
-            <v-btn class="success" color="green">Buy</v-btn>
-          </v-card-actions>
+<v-card-actions>
+	<v-spacer></v-spacer>
+	<modal-dialog :ad="ad" v-if="isOwner"></modal-dialog>
+	<v-btn class="success">Buy</v-btn>
+</v-card-actions>
+
         </v-card>
       </v-col>
     </v-row>
@@ -43,7 +44,11 @@ export default {
     ad() {
       const id = this.id
       return this.$store.getters.adById(id)
-    }
+    },
+    isOwner () {
+	return this.ad.ownerId === 		this.$store.getters.user.id
+}
+
   },
   components: {
 		'modal-dialog': EditAdModal
