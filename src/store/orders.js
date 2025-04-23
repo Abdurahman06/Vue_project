@@ -15,11 +15,10 @@ export default {
         orders: []
     },
 	mutations: {
-        mutations: {
             createOrder(state, payload){
             state.orders.push(payload)
             },
-            },
+            
             
     },
 	actions: {
